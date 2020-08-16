@@ -1,12 +1,12 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { red } from "@material-ui/core/colors";
 
-export default function () {
+export default function (primaryColor) {
   return createMuiTheme({
     palette: {
       type: "light",
       primary: {
-        main: "#0D47A1",
+        main: primaryColor || "#0D47A1",
         contrastText: "#FFF",
       },
       secondary: {
@@ -27,6 +27,11 @@ export default function () {
           body: {
             height: "100%",
             margin: 0,
+          },
+          main: {
+            height: "100vh",
+            width: "100vw",
+            padding: 24,
           },
         },
       },

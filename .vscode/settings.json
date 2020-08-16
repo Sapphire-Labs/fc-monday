@@ -1,6 +1,4 @@
 {
-  "typescript.format.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
   "git.enableSmartCommit": true,
   "git.fetchOnPull": true,
   "git.confirmSync": false,
@@ -8,7 +6,7 @@
   "files.trimTrailingWhitespace": true,
   "files.associations": {
     "*.html": "html",
-    "*.svg": "typescriptreact"
+    "*.svg": "javascriptreact"
   },
   "files.exclude": {
     "**/node_modules": true

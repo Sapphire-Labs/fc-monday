@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import mondaySdk from "monday-sdk-js";
-
-const monday = mondaySdk();
+import monday from "../libs/monday";
 
 class Sample extends Component {
   constructor(props) {

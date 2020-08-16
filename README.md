@@ -27,9 +27,9 @@ The application retrieves and manipulates data from Monday boards through the [M
 
 1. Run `npm run build`
 2. Zip your "./build" folder
-3. Open "Build" tab in your Feature
-4. Click "New Build" button
-5. Click "Upload" radio button and upload zip file with your build
+3. Open the "Build" tab in your Feature
+4. Click the "New Build" button
+5. Click the "Upload" radio button and upload zip file with your build
 6. Go to any board and add your just released view
 
 ## User Interface (UI) Design
@@ -39,7 +39,7 @@ of the following UI guidelines:
 
 - Use, for most components, sizes and spacings &mdash; including the width, height, margin and padding properties
   &mdash; in increments of 4dp (4px on web) for tighter or smaller components, and of 8dp (8px on web) otherwise
-- Use dialogs sparingly, and only when they contain critical information or tasks for the users, and consider the use of
+- Use dialogs sparingly, and only when they contain critical information or tasks for the users, and consider    the use of
   a snackbar, toast, tooltip or popover instead as dialogs are purposefully interruptive
 
 ## Code Styles
