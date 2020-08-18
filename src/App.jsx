@@ -106,11 +106,21 @@ class App extends Component {
     return boardData;
   };
 
-  onSortStart = () => (document.body.style.cursor = "grabbing");
-  onSortEnd = ({ oldIndex, newIndex }) => {
-    document.body.style.cursor = "default";
+  onSortStart = () => {
+    document.body.style.cursor = "grabbing";
+    Array.prototype.forEach.call(document.getElementsByClassName("factCheckCardCard"), v => {
+      v.style.cursor = "grabbing";
+    });
+  };
 
+  onSortEnd = ({ oldIndex, newIndex }) => {
     const boardData = arrayMove(this.state.boardData, oldIndex, newIndex);
+
+    document.body.style.cursor = "default";
+    Array.prototype.forEach.call(document.getElementsByClassName("factCheckCardCard"), v => {
+      v.style.cursor = "pointer";
+    });
+
     monday.storage.instance.setItem("fact_check_urls", boardData);
     this.setState({ boardData });
   };

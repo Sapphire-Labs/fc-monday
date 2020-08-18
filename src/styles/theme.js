@@ -35,6 +35,11 @@ export default function (primaryColor) {
           },
         },
       },
+      MuiTooltip: {
+        tooltipPlacementBottom: {
+          marginTop: "8px !important",
+        },
+      },
     },
   });
 }

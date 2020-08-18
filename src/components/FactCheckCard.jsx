@@ -51,7 +51,7 @@ const FactCheckCard = SortableElement(({ boardId, boardItemId, url, showImage })
   const author = contentData?.content?.author;
   const imageUrl = contentData?.content?.imageUrl;
   const overallScore = contentData?.content?.overallScore;
-  const ratingCount = contentData?.content?.ratingSet.length;
+  const ratingCount = contentData?.content?.ratingSet.length ?? 0;
   const type = contentData?.content?.type;
 
   useEffect(() => {
@@ -63,10 +63,11 @@ const FactCheckCard = SortableElement(({ boardId, boardItemId, url, showImage })
 
   return (
     <>
-      <Grid item xs={12} sm={4} md={3} tabIndex={0}>
+      <Grid item id={`fact-check-card-${boardItemId}`} xs={12} sm={4} md={3} tabIndex={0}>
         <Card
-          style={{ height: showImage ? cardHeight : cardHeight - coverImageHeight }}
+          className="factCheckCardCard"
           onClick={handleOpenFactCheckModal}
+          style={{ height: showImage ? cardHeight : cardHeight - coverImageHeight, cursor: "pointer" }}
         >
           {contentLoading ? (
             <div className={classes.progressWrapper}>
@@ -74,7 +75,7 @@ const FactCheckCard = SortableElement(({ boardId, boardItemId, url, showImage })
             </div>
           ) : (
             <>
-              {showImage && <CardMedia image={`${imageUrl}`} title={title} style={{ height: coverImageHeight }} />}
+              {showImage && <CardMedia image={imageUrl} title={title} style={{ height: coverImageHeight }} />}
               <CardContent>
                 <Typography className={classes.title} variant="subtitle1" component="h2" gutterBottom>
                   {title}

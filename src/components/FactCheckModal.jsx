@@ -3,7 +3,7 @@ import { useIntl } from "react-intl";
 import monday from "../libs/monday";
 import FactCheckInfoBox from "./FactCheckInfoBox";
 import { makeStyles } from "@material-ui/core/styles";
-import { Modal, Paper, Typography, IconButton, Popover } from "@material-ui/core";
+import { Modal, Paper, Typography, IconButton, Tooltip, Popover } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import LaunchIcon from "@material-ui/icons/Launch";
@@ -79,28 +79,45 @@ const FactCheckModal = ({ contentId, boardId, boardItemId, open, onClose }) => {
           <Typography id="fact-check-modal-title" variant="h4" component="h3">
             <span className={classes.left}> {intl.formatMessage({ id: "factCheck.title" })} </span>
             <div className={classes.right}>
-              <IconButton color="primary" onClick={handleOpenInfoPopover} aria-describedby={infoPopoverId}>
-                <InfoIcon />
-              </IconButton>
-              <IconButton
-                color="primary"
-                onClick={handleOpenMondayItem}
-                aria-label="open monday.com item in a new page"
-              >
-                <AssignmentIcon />
-              </IconButton>
-              <IconButton
-                color="primary"
-                href={factCheckUrl}
-                target="_blank"
-                rel="noopener"
-                aria-label="open fakecheck site in a new page"
-              >
-                <LaunchIcon />
-              </IconButton>
-              <IconButton color="primary" onClick={onClose} aria-label="close this modal">
-                <CloseIcon />
-              </IconButton>
+              <Tooltip title={intl.formatMessage({ id: "factCheck.action.info" })}>
+                <IconButton
+                  color="primary"
+                  onClick={handleOpenInfoPopover}
+                  aria-label={intl.formatMessage({ id: "factCheck.action.info.aria" })}
+                  aria-describedby={infoPopoverId}
+                >
+                  <InfoIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={intl.formatMessage({ id: "factCheck.action.monday.open" })}>
+                <IconButton
+                  color="primary"
+                  onClick={handleOpenMondayItem}
+                  aria-label={intl.formatMessage({ id: "factCheck.action.monday.open.aria" })}
+                >
+                  <AssignmentIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={intl.formatMessage({ id: "factCheck.action.fakeCheck.open" })}>
+                <IconButton
+                  color="primary"
+                  href={factCheckUrl}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={intl.formatMessage({ id: "factCheck.action.fakeCheck.open.aria" })}
+                >
+                  <LaunchIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={intl.formatMessage({ id: "factCheck.action.modal.close" })}>
+                <IconButton
+                  color="primary"
+                  onClick={onClose}
+                  aria-label={intl.formatMessage({ id: "factCheck.action.modal.close.aria" })}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </Tooltip>
             </div>
           </Typography>
           <iframe className={classes.iframe} src={factCheckUrl} title={`Fact Check ${contentId}`} />
