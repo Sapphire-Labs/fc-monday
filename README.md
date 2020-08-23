@@ -1,4 +1,4 @@
-# FakeCheck (Monday App)
+# Factibly Monday
 
 ## Setup Procedures
 
@@ -10,7 +10,7 @@
 6. Run `npm install` to install the [project dependencies](package.json)
 7. Run `npm run start`
 8. Open monday.com and login to your account
-9. Select your avatar on the left navigation bar, open the "Developers" section and select the "FakeCheck" app
+9. Select your avatar on the left navigation bar, open the "Developers" section and select the "Factibly" app
 10. Open the "Features" section and select the "Fact Check Analyzer" feature
 11. Go to the [ngrok dashboard](http://localhost:4040/status) in your browser and under "command_line section" find the URL (this is the public URL of the app\*).
 12. Open the "View setup" tab back in monday.com and paste the URL into the "Custom URL" field
