@@ -6,7 +6,7 @@ import { chunk } from "lodash";
 
 const chunkSize = 3;
 
-const FactChecks = SortableContainer(({ boardData, showImage }) => {
+const Factibly = SortableContainer(({ boardData, showImage }) => {
   return (
     <div style={{ flexGrow: 1 }}>
       <Grid container spacing={1}>
@@ -30,4 +30,4 @@ const FactChecks = SortableContainer(({ boardData, showImage }) => {
   );
 });
 
-export default FactChecks;
+export default Factibly;

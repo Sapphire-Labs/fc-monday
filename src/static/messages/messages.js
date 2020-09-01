@@ -15,6 +15,7 @@ export default {
     "factCheck.action.monday.open": "Open Monday.com Item",
     "factCheck.action.monday.open.aria": "open monday.com item in a new page",
     "factCheck.overview.author.unknown": "Unknown",
+    "factCheck.overview.rating.aria": "fact check rating",
     "factCheck.overview.rating.none": "No Ratings Yet",
     "factCheck.overview.rating.count": "Number of Ratings",
     "factCheck.overview.source.author": "Author/Publisher",
